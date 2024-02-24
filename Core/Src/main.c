@@ -143,9 +143,9 @@ int main(void)
 	GPIOC->MODER |= (1 << 15);
 	GPIOC->MODER &= ~(1 << 14);
 	// set PC6 AFRL to 0000: AF0
-	GPIOC->AFR[0] &= ~(0x0 << GPIO_AFRL_AFRL6_Pos);
+	GPIOC->AFR[0] &= ~(0xF << GPIO_AFRL_AFRL6_Pos);
 	// set PC7 AFRL to 0000: AF0
-	GPIOC->AFR[1] &= ~(0x0 << GPIO_AFRL_AFRL7_Pos);
+	GPIOC->AFR[1] &= ~(0xF << GPIO_AFRL_AFRL7_Pos);
 
 	// Set the pins to low speed in the OSPEEDR register
 	GPIOC->OSPEEDR &= ~((1 << 16) | (1 << 17) | (1 << 18) | (1 << 19));
